@@ -1,0 +1,54 @@
+{
+  // Use workspace TypeScript
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  // Enable Biome extension (linting + formatting)
+  "biome.enable": true,
+  "biome.format.enable": true,
+  "biome.lint.enable": true,
+  "biome.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "biome.run": "onSave", // Lint & fix on save
+
+  // Editor formatting & auto fixes
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit"
+  },
+
+  // Suggestions & IntelliSense
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.suggestSelection": "first",
+  "editor.parameterHints.enabled": true,
+  "editor.hover.enabled": "on",
+  "editor.inlineSuggest.enabled": true,
+
+  // Problems panel & error reporting
+  "typescript.validate.enable": true,
+  "javascript.validate.enable": true,
+  "problems.decorations.enabled": true,
+  "problems.showCurrentInStatus": true,
+
+  // TypeScript preferences
+  // "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.quoteStyle": "single",
+
+  // File exclusions
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.next": true,
+    "**/.turbo": true
+  }
+}
