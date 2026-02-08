@@ -166,20 +166,20 @@ export default function Treatments() {
   const visibleTreatments = treatments.slice(currentIndex, currentIndex + visibleSlides);
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <div className="py-16 md:py-24  bg-gray-50">
+      <div className="container mx-auto px-4 max-w-8xl w-full"> 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="md:max-w-2xl">
-            <p className="text-gray-700 mb-4">
+            <p className="pulse-light-description mb-4">
               We are committed to sourcing and offering the latest, safest and most effective treatments in our clinic, which is why we use only the most advanced laser technology and skin products.
             </p>
           </div>
           <div className="text-right">
-            <span className="text-sm font-medium text-gray-600 tracking-wide uppercase block mb-2">
+            <span className="pulse-subtitle tracking-wide uppercase block mb-2">
               Pulse Laser
             </span>
-            <h2 className="text-3xl font-bold text-gray-900">Treatments</h2>
+            <h2 className="pulse-title">Treatments</h2>
           </div>
         </div>
 
@@ -200,7 +200,7 @@ export default function Treatments() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                  <div className="pulse-light-description absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                     <h3 className="text-white font-medium text-sm md:text-base">
                       {treatment.name}
                     </h3>
@@ -231,7 +231,7 @@ export default function Treatments() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

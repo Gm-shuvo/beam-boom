@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import localFont from "next/font/local";
+
 import "./globals.css";
-import { Header } from "@/components/shared/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +12,24 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const poppinsLight = Poppins({
+  weight: "300",
+  variable: "--font-poppins-light",
+  subsets: ["latin"],
+});
+
+const ivyModeSemiBold = localFont({
+  src: "../fonts/ivy-mode-semi-bold.woff2",
+  variable: "--font-ivy-mode-semi-bold",
+  display: "swap",
+});
+
+const ivyModeRegular = localFont({
+  src: "../fonts/IvyMode-Regular.ttf",
+  variable: "--font-ivy-mode-regular",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +45,8 @@ export default function RootLayout({
   return (
     <html lang="en" data-arp="">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppinsLight.variable} ${ivyModeSemiBold.variable} ${ivyModeRegular.variable} antialiased`}
       >
-        <Header />
         {children}
       </body>
     </html>

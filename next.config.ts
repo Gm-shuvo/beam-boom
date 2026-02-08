@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "www.pulse-clinic.co.uk",
         port: "",
-        pathname: "/wp-content/uploads/**"
+        pathname: "/**",
       },
     ],
   },
