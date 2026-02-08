@@ -1,16 +1,20 @@
+"use client";
+
 // components/Footer.tsx
 import Image from "next/image";
 import Link from "next/link";
+import { Href, ViewTransitionLink } from "../view-transition-link";
 
 export default function Footer() {
+
   return (
-    <footer 
+    <footer
       className="relative bg-gray-950 text-gray-200 pt-16 pb-10 overflow-hidden"
       style={{
         backgroundImage: `url('https://www.pulse-clinic.co.uk/wp-content/themes/pulselaser/assets/images/footer-back.webp')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       {/* Dark overlay for readability */}
@@ -70,11 +74,20 @@ export default function Footer() {
 
           {/* Column 2 - Opening Hours */}
           <div className="footer-middle-block">
-            <h4 className="text-xl font-semibold text-white mb-6">Opening Hours</h4>
+            <h4 className="text-xl font-semibold text-white mb-6">
+              Opening Hours
+            </h4>
             <div className="space-y-3">
-              <p><span className="font-medium">Monday–Friday:</span> 09:00 – 19:00</p>
-              <p><span className="font-medium">Saturday:</span> 09:00 – 18:00</p>
-              <p><span className="font-medium">Sunday:</span> 09:00 – 18:00</p>
+              <p>
+                <span className="font-medium">Monday–Friday:</span> 09:00 –
+                19:00
+              </p>
+              <p>
+                <span className="font-medium">Saturday:</span> 09:00 – 18:00
+              </p>
+              <p>
+                <span className="font-medium">Sunday:</span> 09:00 – 18:00
+              </p>
             </div>
           </div>
 
@@ -112,36 +125,43 @@ export default function Footer() {
 
           {/* Column 4 - Contact Info */}
           <div className="footer-contact-block ">
-            <h4 className="text-xl font-semibold text-white mb-6">Contact Info</h4>
+            <h4 className="text-xl font-semibold text-white mb-6">
+              Contact Info
+            </h4>
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                
                 <div>
                   <p className="text-gray-400 text-sm">Phone Number</p>
-                  <a href="tel:02034058483" className="text-white hover:text-blue-300 transition">
+                  <a
+                    href="tel:02034058483"
+                    className="text-white hover:text-blue-300 transition"
+                  >
                     020 3405 8483
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                
                 <div>
                   <p className="text-gray-400 text-sm">Email Address</p>
-                  <a href="mailto:info@pulse-clinic.co.uk" className="text-white hover:text-blue-300 transition">
+                  <a
+                    href="mailto:info@pulse-clinic.co.uk"
+                    className="text-white hover:text-blue-300 transition"
+                  >
                     info@pulse-clinic.co.uk
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-               
                 <div>
                   <p className="text-gray-400 text-sm">Address Info</p>
                   <p className="text-white leading-relaxed">
-                    70 Mortimer Street<br />
-                    London, W1W 7RY<br />
+                    70 Mortimer Street
+                    <br />
+                    London, W1W 7RY
+                    <br />
                     United Kingdom
                   </p>
                 </div>
@@ -153,15 +173,21 @@ export default function Footer() {
         {/* Bottom copyright bar */}
         <div className="relative z-10 mt-16 pt-8 border-t border-gray-700/50 text-center text-sm text-gray-500">
           <p>
-            © {new Date().getFullYear()} Pulse Laser. All Rights Reserved. 
+            © 2026 Pulse Laser. All Rights Reserved.
             <span className="mx-3">|</span>
-            <Link href="/terms-and-conditions" className="hover:text-gray-300 transition">
+            <ViewTransitionLink
+              href={"/terms-and-conditions" as Href}
+              className="hover:text-gray-300 transition"
+            >
               Terms and Conditions
-            </Link>
+            </ViewTransitionLink>
             <span className="mx-2">|</span>
-            <Link href="/refund-and-returns-policy" className="hover:text-gray-300 transition">
+            <ViewTransitionLink
+              href={"/refund-and-returns-policy" as Href}
+              className="hover:text-gray-300 transition"
+            >
               Refund and Returns Policy
-            </Link>
+            </ViewTransitionLink>
           </p>
         </div>
       </div>
