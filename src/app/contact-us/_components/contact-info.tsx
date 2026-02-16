@@ -4,7 +4,7 @@ const ContactInfo = () => {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 bg-white relative overflow-hidden"
+      className="py-16 md:py-18 bg-white relative overflow-hidden"
     >
       {/* Right gray vertical panel */}
       <div className="absolute top-0 right-0 bottom-0 w-[22%] bg-gray-50 z-0 pointer-events-none" />
