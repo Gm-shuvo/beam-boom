@@ -122,6 +122,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -526,32 +527,112 @@ a:hover {
   line-height: 30px;
   color: #000000;
 }
+
 .small-title::before {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: #707070;
-    z-index: -1;
-    width: 42%;
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #707070;
+  z-index: -1;
+  width: 42%;
 }
+
 .small-title::after {
-    content: "";
-    position: absolute;
-    top: 12px;
-    right: 0;
-    height: 1px;
-    width: 42%;
-    background-color: #707070;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 0;
+  height: 1px;
+  width: 42%;
+  background-color: #707070;
+  z-index: -1;
 }
+
 .footer-part::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.95) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0.95) 100%);
   pointer-events: none;
   z-index: 5;
+}
+
+/* ===== Banner Wrapper Background Decoration ===== */
+
+.banner-wrp {
+  position: relative;
+}
+
+/* Right leaf decoration (behind everything) */
+.banner-wrp::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 476px;
+  height: 521px;
+
+  background-image: url("/images/banner-leaves.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ===== Responsive sizes (matches original behaviour) ===== */
+
+@media (max-width: 1199px) {
+  .banner-wrp::after {
+    width: 356px;
+    height: 401px;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner-wrp::after {
+    width: 276px;
+    height: 311px;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner-wrp::after {
+    width: 230px;
+    height: 322px;
+  }
+}
+
+button,
+a,
+label,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+textarea,
+[role="button"],
+[tabindex]:not([tabindex="-1"]) {
+  cursor: pointer;
+}
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 45s linear infinite;
 }

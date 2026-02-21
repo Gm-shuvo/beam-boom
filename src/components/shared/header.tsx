@@ -12,7 +12,7 @@ import {
 } from "@phosphor-icons/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function getHrefPathname(href: Href): string {
   if (typeof href === "string") return href;
@@ -26,7 +26,7 @@ export const Header = () => {
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileSubOpen, setMobileSubOpen] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const isActive = (href: Href) => {
     const hrefPath = getHrefPathname(href).replace(/\/$/, "");
@@ -38,11 +38,32 @@ export const Header = () => {
     return current === hrefPath || current.startsWith(hrefPath + "/");
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 transition-all duration-300
+    ${
+      isScrolled
+        ? "bg-white/70 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] border-b border-gray-200/60"
+        : "bg-transparent"
+    }
+  `}
+      >
         <div className="p-6 px-4 sm:px-6 lg:px-8 w-full mx-auto">
-          <nav className="flex items-center justify-between py-3 md:py-4">
+          <nav
+            className={`flex items-center justify-between transition-all duration-300 ${
+              isScrolled ? "py-2.5 md:py-3" : "py-3 md:py-4"
+            }`}
+          >
             {/* Logo */}
             <ViewTransitionLink href="/" className="shrink-0 cursor-pointer">
               <Image

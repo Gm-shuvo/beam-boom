@@ -20,9 +20,14 @@ export const navigationData = [
   {
     name: "TREATMENTS",
     children: [
-      { name: "Laser Hair Removal", href: "/treatments/laser-hair-removal" as Href },
-      { name: "Laser Skin Resurfacing", href: "/treatments/laser-skin-resurfacing" as Href },
-      // add more...
+      {
+        name: "Laser Tattoo Removal",
+        href: "/treatment/laser-tattoo-removal" as Href,
+      },
+      {
+        name: "Laser Skin Resurfacing",
+        href: "/treatment/laser-skin-resurfacing" as Href,
+      },
     ],
   },
   {
