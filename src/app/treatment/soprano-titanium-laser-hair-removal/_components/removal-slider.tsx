@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Href, ViewTransitionLink } from "@/components/view-transition-link";
 import { ArrowLeftIcon, ArrowRightIcon } from "@phosphor-icons/react";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface RemovalPair {
   id: string;
@@ -11,47 +11,65 @@ interface RemovalPair {
   afterImage: string;
   beforeSlug: string;
   afterSlug: string;
-  title?: string; // Optional: e.g. "Neck Script", "Finger Initials"
+  title?: string;
 }
 
 const removalPairs: RemovalPair[] = [
   {
     id: "1",
-    beforeImage: "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/before1-1.jpg",
-    afterImage: "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/after2.jpg",
-    beforeSlug: "advanced-laser-tattoo-removal-before",
-    afterSlug: "advanced-laser-tattoo-removal-after",
-    title: "Neck Ornamental Design",
+    beforeImage:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/before-img-1-1.jpg",
+    afterImage:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/after-img-1-1.jpg",
+    title: "Neck Script with Stars",
+    beforeSlug: "neck-script-stars-tattoo-removal-before",
+    afterSlug: "neck-script-stars-tattoo-removal-after",
   },
   {
     id: "2",
-    beforeImage: "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/1bb1dfbf-e833-426e-938d-bb2be3ab6709.jpeg",
-    afterImage: "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/IMG_2220-scaled.jpeg",
-    beforeSlug: "complete-tattoo-removal-before",
-    afterSlug: "safe-laser-tattoo-removal-after",
-    title: "Detailed Finger Tattoo",
+    beforeImage:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/173938568267aceb52c3594-2.jpg",
+    afterImage:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/175329149368811ae58bbea-2-e1762390915130.jpg",
+    title: "Finger Initials / Lettering",
+    beforeSlug: "finger-initials-lettering-tattoo-removal-before",
+    afterSlug: "finger-initials-lettering-tattoo-removal-after",
   },
   {
     id: "3",
-    beforeImage: "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/169037932564c1243de0f5f.jpg",
-    afterImage: "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/17481023196831ecaf95759-2-e1750630687292.jpg",
-    beforeSlug: "complete-tattoo-removal-before",
-    afterSlug: "safe-laser-tattoo-removal-after",
-    title: "Script Tattoo Removal",
+    beforeImage:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/17032639826585beeee1d85-2-e1762391408121.jpg",
+    afterImage:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/17339407076759d5e3e52d1-2.jpg",
+    title: "Neck / Upper Back Swirl Design",
+    beforeSlug: "neck-upper-back-swirl-tattoo-removal-before",
+    afterSlug: "neck-upper-back-swirl-tattoo-removal-after",
   },
   {
     id: "4",
-    beforeImage: "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/15551013765cb0f6c062780-2.jpg",
-    afterImage: "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/IMG_5286-2.jpg",
-    beforeSlug: "complete-tattoo-removal-before",
-    afterSlug: "safe-laser-tattoo-removal-after",
-    title: "Custom Design Fade",
+    beforeImage:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/before-img-2-1.jpg",
+    afterImage:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/after-img-2-1.jpg",
+    title: "Hand / Finger Script Tattoo",
+    beforeSlug: "hand-finger-script-tattoo-removal-before",
+    afterSlug: "hand-finger-script-tattoo-removal-after",
+  },
+  {
+    id: "5",
+    beforeImage:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/before-img-3-1.jpg",
+    afterImage:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/after-img-3-1.jpg",
+    title: "Small Neck / Collarbone Text",
+    beforeSlug: "small-neck-collarbone-text-tattoo-removal-before",
+    afterSlug: "small-neck-collarbone-text-tattoo-removal-after",
   },
 ];
 
 export default function RemovalSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(2); // default: 2 pairs visible
+  const [visibleCount, setVisibleCount] = useState(2);
 
   useEffect(() => {
     const updateVisible = () => {
@@ -75,13 +93,16 @@ export default function RemovalSlider() {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
-  const visiblePairs = removalPairs.slice(currentIndex, currentIndex + visibleCount);
+  const visiblePairs = removalPairs.slice(
+    currentIndex,
+    currentIndex + visibleCount,
+  );
 
   return (
     <section
       className="py-16 md:py-24 relative bg-gray-900 text-white overflow-hidden"
       style={{
-        backgroundImage: `url("https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/R6II4137-scaled.jpg")`,
+        backgroundImage: `url("https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/skin-conditions-bg-3.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -95,7 +116,8 @@ export default function RemovalSlider() {
             Real Patient Results
           </h2>
           <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-            Advanced picosecond laser technology delivers safe, effective tattoo fading and complete removal with minimal risk of scarring.
+            Advanced picosecond laser technology delivers safe, effective tattoo
+            fading and complete removal with minimal risk of scarring.
           </p>
         </div>
 

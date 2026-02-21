@@ -149,6 +149,36 @@
   @apply block w-[10px] h-[10px] bg-black rounded-full;
 }
 
+button,
+a,
+label,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+textarea,
+[role="button"],
+[tabindex]:not([tabindex="-1"]) {
+  cursor: pointer;
+}
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 45s linear infinite;
+}
+
 .banner-img::after {
   content: "";
   background-color: #e1dddb;
@@ -605,34 +635,4 @@ a:hover {
     width: 230px;
     height: 322px;
   }
-}
-
-button,
-a,
-label,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="checkbox"],
-input[type="radio"],
-select,
-textarea,
-[role="button"],
-[tabindex]:not([tabindex="-1"]) {
-  cursor: pointer;
-}
-
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 45s linear infinite;
 }
