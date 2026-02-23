@@ -32,6 +32,14 @@ export const navigationData = [
         name: "Skin Boosters / Biostimulators",
         href: "/treatment/skin-boosters-biostimulators" as Href,
       },
+      {
+        name: "Anti-Wrinkle Injections",
+        href: "/treatment/anti-wrinkle-injections" as Href,
+      },
+      {
+        name: "ClearSkin Pro Acne Treatment",
+        href: "/treatment/clear-skin-pro-acne-treatment" as Href,
+      },
     ],
   },
   {
@@ -39,7 +47,6 @@ export const navigationData = [
     children: [
       { name: "Acne", href: "/skin-conditions/acne" as Href },
       { name: "Rosacea", href: "/skin-conditions/rosacea" as Href },
-      // add more...
     ],
   },
   { name: "PRICING", href: "/pricing" as Href },
