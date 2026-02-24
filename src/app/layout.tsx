@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 
+import Footer from "@/components/shared/footer";
+import { Header } from "@/components/shared/header";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import { Header } from '@/components/shared/header';
-import Footer from '@/components/shared/footer';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,13 +46,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-arp="">
+    <html lang="en" data-arp="" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppinsLight.variable} ${ivyModeSemiBold.variable} ${ivyModeRegular.variable} antialiased`}
       >
-        <Header/>
-        {children}
-        <Footer />
+        <ThemeProvider defaultTheme="system" storageKey="pulse-laser-theme">
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -26,7 +26,7 @@ export default function OurPrices() {
     setExpandedCategories((prev) =>
       prev.includes(category)
         ? prev.filter((c) => c !== category)
-        : [...prev, category]
+        : [...prev, category],
     );
   };
 
@@ -243,37 +243,43 @@ export default function OurPrices() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section className="py-12 sm:py-16 md:py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14 items-end">
-          <div>
-            <p className="pulse-light-description max-w- font-sans">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-10 md:mb-14 items-end">
+          <div className="order-2 lg:order-1">
+            <p className="pulse-light-description text-sm sm:text-base max-w-full font-sans text-gray-600 dark:text-gray-300">
               Please speak to a member of the reception team for more
               information. This is what helps us deliver the superior results
               our clients have come to expect of us.
             </p>
             {/* Navigation arrows */}
-            <div className="flex items-center gap-2 mt-6">
+            <div className="flex items-center gap-2 mt-4 sm:mt-6">
               <button
                 onClick={() => scroll("left")}
-                className="w-10 h-10 border border-border flex items-center justify-center hover:bg-secondary transition-colors"
+                className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
               >
-                <ChevronLeft size={18} className="text-foreground" />
+                <ChevronLeft
+                  size={16}
+                  className="sm:w-[18px] sm:h-[18px] text-gray-800 dark:text-gray-200"
+                />
               </button>
               <button
                 onClick={() => scroll("right")}
-                className="w-10 h-10 border border-border flex items-center justify-center hover:bg-secondary transition-colors"
+                className="w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
               >
-                <ChevronRight size={18} className="text-foreground" />
+                <ChevronRight
+                  size={16}
+                  className="sm:w-[18px] sm:h-[18px] text-gray-800 dark:text-gray-200"
+                />
               </button>
             </div>
           </div>
-          <div className="text-right">
-            <span className="pulse-subtitle tracking-wide uppercase block mb-2 text-gray-600 font-medium">
+          <div className="text-left lg:text-right order-1 lg:order-2">
+            <span className="pulse-subtitle text-xs sm:text-sm tracking-wide uppercase block mb-2 text-gray-600 dark:text-gray-400 font-medium">
               Pulse Laser
             </span>
-            <h2 className="pulse-title text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="pulse-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-4">
               Our Prices
             </h2>
           </div>
@@ -282,45 +288,45 @@ export default function OurPrices() {
         {/* Price cards */}
         <div
           ref={sliderRef}
-          className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
+          className="flex overflow-x-auto gap-4 sm:gap-6 pb-6 sm:pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
         >
           {pricingCategories.map((card, i) => (
             <div
               key={i}
-              className=" min-w-[280px] md:min-w-[320px] flex-none snap-start bg-white shadow-lg p-8 flex flex-col items-center text-center group transition-all duration-300 hover:shadow-xl"
+              className="min-w-[260px] sm:min-w-[280px] md:min-w-[300px] lg:min-w-[320px] flex-none snap-start bg-white dark:bg-gray-900 shadow-lg p-5 sm:p-6 md:p-8 flex flex-col items-center text-center group transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl border border-gray-100 dark:border-gray-700"
             >
               <div className="our-price-item flex-1 w-full flex flex-col items-center">
-                <h3 className="review-title mb-4 text-gray-900">
+                <h3 className="review-title mb-3 sm:mb-4 text-gray-900 dark:text-white text-lg sm:text-xl md:text-2xl">
                   {card.title}
                 </h3>
 
                 {card.subtitle && (
-                  <div className=" mb-6 w-full flex justify-center">
-                    <span className="detail inline-block border-b-2 border-blue-400 pb-1 uppercase tracking-wider">
+                  <div className="mb-4 sm:mb-6 w-full flex justify-center">
+                    <span className="detail inline-block border-b-2 border-blue-400 dark:border-blue-500 pb-1 uppercase tracking-wider text-xs sm:text-sm">
                       {card.subtitle}
                     </span>
                   </div>
                 )}
 
                 {card.note && (
-                  <p className="text-sm text-gray-500 mb-4 italic">
+                  <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-3 sm:mb-4 italic">
                     {card.note}
                   </p>
                 )}
 
-                <div className="space-y-3 mb-8 w-full">
+                <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 w-full">
                   {card.items.map((item, j) => (
                     <div
                       key={j}
-                      className="text-gray-600 font-light text-base md:text-lg flex items-center justify-center gap-2"
+                      className="text-gray-600 dark:text-gray-300 font-light text-sm sm:text-base md:text-lg flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2"
                     >
-                      <span>{item.name}</span>
+                      <span className="text-center">{item.name}</span>
                       {item.price && (
                         <>
-                          <span className="hidden opacity-0 group-hover:opacity-100 transition-opacity text-gray-300">
+                          <span className="hidden sm:inline opacity-0 group-hover:opacity-100 transition-opacity text-gray-300 dark:text-gray-600">
                             -
                           </span>
-                          <span className="font-medium text-gray-900">
+                          <span className="font-medium text-gray-900 dark:text-white text-sm sm:text-base">
                             {item.price}
                           </span>
                         </>
@@ -330,8 +336,8 @@ export default function OurPrices() {
                 </div>
               </div>
 
-              <button className="w-full bg-black text-white py-3 px-6 flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors uppercase text-sm tracking-wide font-medium mt-auto">
-                <ArrowRight size={16} />
+              <button className="w-full bg-black dark:bg-white dark:text-black text-white py-2.5 sm:py-3 px-4 sm:px-6 flex items-center justify-center gap-2 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors uppercase text-xs sm:text-sm tracking-wide font-medium mt-auto">
+                <ArrowRight size={14} className="sm:w-4 sm:h-4" />
                 Book Now
               </button>
             </div>

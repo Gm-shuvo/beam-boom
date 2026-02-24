@@ -1,8 +1,6 @@
-// components/AsSeenIn.tsx
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 
 const logos = [
   {
@@ -36,67 +34,59 @@ const logos = [
 ];
 
 export default function AsSeenIn() {
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Auto-scroll logic
-  useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    const scrollAmount = 180; // ≈ logo width + gap
-    const intervalTime = 2800; // change logo every ~2.8 seconds
-
-    intervalRef.current = setInterval(() => {
-      if (slider) {
-        const maxScroll = slider.scrollWidth - slider.clientWidth;
-        const nextScroll = slider.scrollLeft + scrollAmount;
-
-        if (nextScroll >= maxScroll) {
-          // Jump back to start smoothly for infinite feel
-          slider.scrollTo({ left: 0, behavior: "instant" });
-        } else {
-          slider.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        }
-      }
-    }, intervalTime);
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, []);
-
   return (
-    <section className="logo-wrp py-16 md:py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="logo-main">
-          <div className="small-title text-center mb-10">
-            <h3 className="small-title text-3xl md:text-4xl font-bold text-gray-900">
-              As Seen In
-            </h3>
-          </div>
+    <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-white dark:bg-gray-900 overflow-hidden transition-colors duration-300">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Centered heading with "As Seen In" subtitle */}
+        <div className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+          <span className="pulse-subtitle text-sm sm:text-base md:text-lg font-medium text-gray-600 dark:text-gray-400 tracking-wide uppercase">
+            As Seen In
+          </span>
+        </div>
 
-          <div className="relative">
-            {/* Slider */}
+        {/* Marquee container with top/bottom borders */}
+        <div className="relative border-t border-b border-gray-200 dark:border-gray-700 py-6 sm:py-8 md:py-10 lg:py-12 transition-colors duration-300">
+          <div className="overflow-hidden">
             <div
-              ref={sliderRef}
-              className="logo-slider flex gap-6 md:gap-10 overflow-x-hidden pb-6 snap-x snap-mandatory scrollbar-hide scroll-smooth select-none"
+              className="flex animate-marquee whitespace-nowrap will-change-transform hover:[animation-play-state:paused]"
+              style={{
+                animation: "marquee 45s linear infinite",
+              }}
             >
-              {/* Main logos + enough duplicates for seamless looping */}
-              {[...logos, ...logos, ...logos.slice(0, 3)].map((logo, index) => (
+              {/* First set of logos */}
+              {logos.map((logo, idx) => (
                 <div
-                  key={index}
-                  className="logo-item min-w-35 sm:min-w-40 md:min-w-45 shrink-0 snap-start"
+                  key={`logo-1-${idx}`}
+                  className="shrink-0 mx-4 sm:mx-6 md:mx-8 lg:mx-10 xl:mx-12"
                 >
-                  <div className="logo-img block transition-all duration-400 hover:scale-110 hover:brightness-110">
+                  <div className="w-28 sm:w-32 md:w-40 lg:w-48 xl:w-56 h-14 sm:h-16 md:h-18 lg:h-20 flex items-center justify-center transition-all duration-400 grayscale hover:grayscale-0 hover:scale-110 hover:brightness-110 dark:brightness-90 dark:hover:brightness-100">
                     <Image
                       src={logo.src}
                       alt={logo.alt}
-                      width={180}
-                      height={80}
-                      className="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-400"
+                      width={220}
+                      height={100}
+                      className="max-w-full max-h-full object-contain"
                       quality={85}
-                      priority={index < 7} // faster load for first visible logos
+                      priority={idx < 4}
+                    />
+                  </div>
+                </div>
+              ))}
+
+              {/* Duplicate set for seamless infinite loop */}
+              {logos.map((logo, idx) => (
+                <div
+                  key={`logo-2-${idx}`}
+                  className="shrink-0 mx-4 sm:mx-6 md:mx-8 lg:mx-10 xl:mx-12"
+                >
+                  <div className="w-28 sm:w-32 md:w-40 lg:w-48 xl:w-56 h-14 sm:h-16 md:h-18 lg:h-20 flex items-center justify-center transition-all duration-400 grayscale hover:grayscale-0 hover:scale-110 hover:brightness-110 dark:brightness-90 dark:hover:brightness-100">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={220}
+                      height={100}
+                      className="max-w-full max-h-full object-contain"
+                      quality={85}
                     />
                   </div>
                 </div>
@@ -105,17 +95,6 @@ export default function AsSeenIn() {
           </div>
         </div>
       </div>
-
-      {/* Hide scrollbar */}
-      <style jsx global>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </section>
   );
 }

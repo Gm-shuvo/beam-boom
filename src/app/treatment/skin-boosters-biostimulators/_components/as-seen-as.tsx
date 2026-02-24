@@ -48,7 +48,7 @@ export default function AsSeenIn() {
         <div className="relative border-t border-b border-gray-200 py-8 md:py-10 lg:py-12">
           <div className="overflow-hidden">
             <div
-              className="flex animate-marquee whitespace-nowrap will-change-transform hover:[animation-play-state:paused]"
+              className="flex animate-marquee whitespace-nowrap will-change-transform hover:paused"
               style={{
                 animation: "marquee 45s linear infinite",
               }}

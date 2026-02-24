@@ -188,6 +188,12 @@ textarea,
   right: 0;
   bottom: 0;
   opacity: 0.7;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.dark .banner-img::after {
+  background-color: #1a1a1a;
+  opacity: 0.85;
 }
 
 .btn {
@@ -267,24 +273,34 @@ a:hover {
 
 .pulse-title {
   font-family: var(--font-ivy-mode-semi-bold);
-  font-size: 75px;
+  font-size: clamp(2rem, 5vw + 1rem, 4.6875rem);
   font-weight: 500;
-  line-height: 75px;
+  line-height: 1.1;
   color: rgb(0, 0, 0);
+  transition: color 0.3s ease;
+}
+
+.dark .pulse-title {
+  color: rgb(255, 255, 255);
 }
 
 .pulse-light-description {
   font-family: var(--font-poppins-light);
-  font-size: 20px;
+  font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.25rem);
   font-weight: 400;
-  line-height: 30px;
+  line-height: 1.6;
   color: rgb(117, 117, 117);
+  transition: color 0.3s ease;
+}
+
+.dark .pulse-light-description {
+  color: rgb(180, 180, 180);
 }
 
 .pulse-subtitle {
   font-family: var(--font-poppins-light);
-  font-size: 18px;
-  line-height: 18px;
+  font-size: clamp(0.75rem, 1vw + 0.5rem, 1.125rem);
+  line-height: 1.2;
   color: #000000;
   position: relative;
   display: inline-block;
@@ -293,29 +309,45 @@ a:hover {
   padding: 4px 0;
   text-transform: uppercase;
   margin: 0 0 20px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .pulse-subtitle {
+  color: #ffffff;
+  border-top-color: #6cb5e8;
+  border-bottom-color: #6cb5e8;
 }
 
 /* about section */
 .block-title {
   font-family: var(--font-ivy-mode-regular);
-  font-size: 50px;
-  line-height: 50px;
+  font-size: clamp(1.5rem, 3vw + 1rem, 3.125rem);
+  line-height: 1.1;
   color: #000000;
+  transition: color 0.3s ease;
+}
+
+.dark .block-title {
+  color: #ffffff;
 }
 
 .block-details {
   font-family: var(--font-poppins-light);
-  font-size: 20px;
-  line-height: 20px;
+  font-size: clamp(0.875rem, 1vw + 0.5rem, 1.25rem);
+  line-height: 1.5;
   color: #757575;
+  transition: color 0.3s ease;
+}
+
+.dark .block-details {
+  color: #a0a0a0;
 }
 
 /* skin conditions section */
 
 .skin-conditions-wrp {
   background-image: url(https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/skin-conditions-bg.jpg);
-
-  padding: 70px 45px 50px;
+  padding: clamp(2.5rem, 5vw, 4.375rem) clamp(1rem, 3vw, 2.8125rem);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -329,8 +361,8 @@ a:hover {
   position: absolute;
   left: 0;
   top: 0;
-  width: 403px;
-  height: 572px;
+  width: clamp(200px, 30vw, 403px);
+  height: clamp(280px, 40vw, 572px);
 }
 
 .light-overlay {
@@ -348,6 +380,12 @@ a:hover {
   bottom: 0;
   opacity: 0.8;
   z-index: -1;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.dark .light-overlay::after {
+  background-color: #1a1a1a;
+  opacity: 0.9;
 }
 
 /* pulse prices section */
@@ -441,24 +479,34 @@ a:hover {
 
 .pulse-title {
   font-family: var(--font-ivy-mode-semi-bold);
-  font-size: 75px;
+  font-size: clamp(2rem, 5vw + 1rem, 4.6875rem);
   font-weight: 500;
-  line-height: 75px;
+  line-height: 1.1;
   color: rgb(0, 0, 0);
+  transition: color 0.3s ease;
+}
+
+.dark .pulse-title {
+  color: rgb(255, 255, 255);
 }
 
 .pulse-light-description {
   font-family: var(--font-poppins-light);
-  font-size: 20px;
+  font-size: clamp(0.875rem, 1.5vw + 0.5rem, 1.25rem);
   font-weight: 400;
-  line-height: 30px;
+  line-height: 1.6;
   color: rgb(117, 117, 117);
+  transition: color 0.3s ease;
+}
+
+.dark .pulse-light-description {
+  color: rgb(180, 180, 180);
 }
 
 .pulse-subtitle {
   font-family: var(--font-poppins-light);
-  font-size: 18px;
-  line-height: 18px;
+  font-size: clamp(0.75rem, 1vw + 0.5rem, 1.125rem);
+  line-height: 1.2;
   color: #000000;
   position: relative;
   display: inline-block;
@@ -467,29 +515,45 @@ a:hover {
   padding: 4px 0;
   text-transform: uppercase;
   margin: 0 0 20px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .pulse-subtitle {
+  color: #ffffff;
+  border-top-color: #6cb5e8;
+  border-bottom-color: #6cb5e8;
 }
 
 /* about section */
 .block-title {
   font-family: var(--font-ivy-mode-regular);
-  font-size: 50px;
-  line-height: 50px;
+  font-size: clamp(1.5rem, 3vw + 1rem, 3.125rem);
+  line-height: 1.1;
   color: #000000;
+  transition: color 0.3s ease;
+}
+
+.dark .block-title {
+  color: #ffffff;
 }
 
 .block-details {
   font-family: var(--font-poppins-light);
-  font-size: 20px;
-  line-height: 20px;
+  font-size: clamp(0.875rem, 1vw + 0.5rem, 1.25rem);
+  line-height: 1.5;
   color: #757575;
+  transition: color 0.3s ease;
+}
+
+.dark .block-details {
+  color: #a0a0a0;
 }
 
 /* skin conditions section */
 
 .skin-conditions-wrp {
   background-image: url(https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/skin-conditions-bg.jpg);
-
-  padding: 70px 45px 50px;
+  padding: clamp(2.5rem, 5vw, 4.375rem) clamp(1rem, 3vw, 2.8125rem);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -503,8 +567,8 @@ a:hover {
   position: absolute;
   left: 0;
   top: 0;
-  width: 403px;
-  height: 572px;
+  width: clamp(200px, 30vw, 403px);
+  height: clamp(280px, 40vw, 572px);
 }
 
 .light-overlay {
@@ -522,16 +586,27 @@ a:hover {
   bottom: 0;
   opacity: 0.8;
   z-index: -1;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.dark .light-overlay::after {
+  background-color: #1a1a1a;
+  opacity: 0.9;
 }
 
 /* pulse prices section */
 .our-price-item .review-title {
   font-family: var(--font-ivy-mode-semi-bold);
-  font-size: 23px;
-  line-height: 23px;
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.4375rem);
+  line-height: 1.2;
   text-transform: capitalize;
   display: block;
-  margin: 0 0 30px;
+  margin: 0 0 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.dark .our-price-item .review-title {
+  color: #ffffff;
 }
 
 .our-price-item .detail {
@@ -540,9 +615,15 @@ a:hover {
   border-bottom: 1px solid #4995d1;
   padding: 0 0 10px;
   margin: 0 0 15px;
-  line-height: 24px;
+  line-height: 1.5;
   display: inline-block;
   text-align: center;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .our-price-item .detail {
+  color: #e0e0e0;
+  border-bottom-color: #6cb5e8;
 }
 
 .our-price-item ul li {

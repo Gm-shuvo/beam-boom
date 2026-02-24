@@ -1,10 +1,10 @@
 // components/SkinConditions.tsx
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Href, ViewTransitionLink } from "@/components/view-transition-link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface SkinCondition {
   name: string;
@@ -136,7 +136,7 @@ const skinConditions: SkinCondition[] = [
   {
     name: "Enlarged pores/ Blackheads",
     image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/06/asian-male-nose-cheek-close-260nw-2175602373-e1719396361699.webp",
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/06/asian-male-nose-cheek-close-260sw-2175602373-e1719396361699.webp",
     link: "https://www.pulse-clinic.co.uk/skin-condition/enlarged-pores-blackheads/",
   },
   {
@@ -194,21 +194,21 @@ export default function SkinConditions() {
 
   const visibleConditions = skinConditions.slice(
     currentIndex,
-    currentIndex + visibleSlides
+    currentIndex + visibleSlides,
   );
 
   return (
-    <section className="skin-conditions-wrp light-overlay py-16 md:py-24">
-      <div className="container mx-auto px-4">
+    <section className="skin-conditions-wrp light-overlay py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="pulse-subtitle tracking-wide uppercase block mb-2 text-gray-600 font-medium">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <span className="pulse-subtitle text-xs sm:text-sm md:text-base tracking-wide uppercase block mb-2 text-gray-600 dark:text-gray-400 font-medium">
             Pulse Laser
           </span>
-          <h2 className="pulse-title text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="pulse-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
             Skin Conditions
           </h2>
-          <p className="pulse-light-description max-w-3xl mx-auto text-gray-600 text-lg">
+          <p className="pulse-light-description max-w-3xl mx-auto text-gray-600 dark:text-gray-300 text-sm sm:text-base md:text-lg">
             We specialize in treating a wide range of skin conditions with
             cutting-edge laser and aesthetic technology.
           </p>
@@ -216,14 +216,14 @@ export default function SkinConditions() {
 
         {/* Slider */}
         <div className="relative">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {visibleConditions.map((condition) => (
               <ViewTransitionLink
                 key={condition.link}
                 href={condition.link as Href}
                 className="group block"
               >
-                <div className="relative h-[470px] w-full overflow-hidden rounded-xl shadow-md transition-all duration-300 group-hover:shadow-xl">
+                <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[470px] w-full overflow-hidden rounded-xl shadow-md transition-all duration-300 group-hover:shadow-xl">
                   <Image
                     src={condition.image}
                     alt={condition.name}
@@ -232,8 +232,8 @@ export default function SkinConditions() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-white font-semibold text-lg md:text-xl drop-shadow-md">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
+                    <h3 className="text-white font-semibold text-base sm:text-lg md:text-xl drop-shadow-md">
                       {condition.name}
                     </h3>
                   </div>
@@ -243,22 +243,28 @@ export default function SkinConditions() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-center gap-4 mt-10">
+          <div className="flex justify-center gap-3 sm:gap-4 mt-8 sm:mt-10">
             <button
               onClick={prevSlide}
               disabled={currentIndex === 0}
-              className="p-4 bg-white rounded-full shadow-lg hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              className="p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
               aria-label="Previous skin condition"
             >
-              <ChevronLeft size={24} className="text-gray-800" />
+              <ChevronLeft
+                size={20}
+                className="sm:w-6 sm:h-6 text-gray-800 dark:text-gray-200"
+              />
             </button>
             <button
               onClick={nextSlide}
               disabled={currentIndex >= maxIndex}
-              className="p-4 bg-white rounded-full shadow-lg hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+              className="p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
               aria-label="Next skin condition"
             >
-              <ChevronRight size={24} className="text-gray-800" />
+              <ChevronRight
+                size={20}
+                className="sm:w-6 sm:h-6 text-gray-800 dark:text-gray-200"
+              />
             </button>
           </div>
         </div>
