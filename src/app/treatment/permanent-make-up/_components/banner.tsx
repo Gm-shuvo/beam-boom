@@ -19,14 +19,14 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    subtitle: "PLUSE LASER",
-    title: "Laser Tattoo Removal",
-    description: "",
+    subtitle: "BEAM AND BLOOM",
+    title: "Permanent Make Up",
+    description: "Save time and enhance your natural features with our bespoke Permanent Make Up (PMU) treatments.",
 
     backgroundImage:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/R6II4136-scaled.jpg",
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/10/istockphoto-1779848264-612x612-1.jpg",
     foregroundImage:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/R6II4136-scaled.jpg",
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/10/cosmetic-aesthetic-treatment-face-caucasian-260nw-2419112687-e1727863055754.webp",
     buttonText: "Contact Us",
   },
 ];

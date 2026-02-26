@@ -1,72 +1,90 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { Barbell, Clock, Jar, Sun, Thermometer } from "@phosphor-icons/react";
 import Image from "next/image";
 
 export default function Procedure() {
+  const checklist = [
+    {
+      icon: <Barbell size={32} className="text-gray-700 font-bold" />,
+      text: "No exercise for 48 hours",
+    },
+    {
+      icon: <Thermometer size={32} className="text-gray-700" />,
+      text: "No sauna or steam for 7 days",
+    },
+    {
+      icon: <Sun size={32} className="text-gray-700" />,
+      text: "No sun, fake tan, UV light for 2 weeks pre or post treatment",
+    },
+    {
+      icon: <Jar size={32} className="text-gray-700" />,
+      text: "No active ingredients or retinoid products for 2 weeks",
+    },
+    {
+      icon: <Clock size={32} className="text-gray-700" />,
+      text: "2-4 weeks of healing",
+    },
+  ];
+
   return (
-    <section id="procedure" className="py-16 md:py-24 bg-gray-50 banner-wrp">
-      {/* right side */}
+    <section id="procedure" className="py-16 md:py-24 bg-gray-50 relative overflow-hidden">
+      {/* Right side background panel */}
       <div className="absolute top-0 right-0 bottom-0 w-[22%] bg-white z-0 pointer-events-none" />
 
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-24 items-center justify-between mb-12">
-          <div className="flex flex-col gap-6">
-            <div className="flex gap-6 items-start mb-14">
-              <Button size={"lg"} className="h-14 w-60 text-lg">
-                The Procedure
-              </Button>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content: Checklist */}
+          <div className="space-y-12">
+            <ul className="space-y-8">
+              {checklist.map((item, index) => (
+                <li key={index} className="flex items-center gap-6 group">
+                  <div className="flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+                    {item.icon}
+                  </div>
+                  <span className="text-lg md:text-xl text-gray-800 font-light poppins-light-text !text-gray-800">
+                    {item.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-              <Button
-                size={"lg"}
-                className="h-14 w-40 text-lg bg-white text-black border-gray-300 hover:bg-gray-100 shadow"
-              >
-                FAQ
-              </Button>
-            </div>
-
-            <div className="space-y-4 container mx-auto flex flex-col items-center justify-center text-[#757575]">
-              <p className="text-xl  mb-4">
-                Before your first session, you will attend a complimentary
-                consultation and patch test appointment where the technician
-                will test your skin’s reaction to the laser to determine the
-                most effective energy for treatment.
-              </p>
-
-              <p className="text-xl mb-4">
-                For the treatment, you will be given a pair of protective eye
-                shields. If your tattoo is large, numbing cream may be applied
-                beforehand. The technician will also cool your skin with a
-                CryoAir, a powerful chilling machine that blows cold air on the
-                skin. This will keep the skin cool whilst they use the laser to
-                pass pulses of intense light over the tattoo. Smaller tattoos
-                will require fewer pulses, and this will take as little as 5
-                minutes, while larger ones will need more pulses and time to
-                remove them.
-              </p>
-
-              <p className="text-xl mb-4">
-                Immediately following the treatment, a soothing cream and
-                dressing will be applied to the treated area to protect it and
-                after care advice will be given.
-              </p>
-
-              <p className="text-xl mb-4">
-                To discuss your personal laser tattoo removal treatment plan and
-                for any other questions you may have, contact our clinic on 020
-                3405 8483 or via info@pulse-clinic.co.uk to book your
-                appointment today.
-              </p>
-            </div>
+            <p className="pulse-light-description italic !text-xl md:!text-2xl text-gray-600 max-w-xl border-l-4 border-[#B59A5B] pl-6 py-2">
+              For best results, we recommend 8–10 treatments spaced 6–8 weeks
+              apart.
+            </p>
           </div>
 
-          {/* Right Image */}
+          {/* Right Content: Before/After Image */}
           <div className="relative">
-            <div className="relative -right-21.75 h-100 md:h-125 w-75 md:w-150 overflow-hidden z-10">
-              <Image
-                src="https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/R6II4136-scaled.jpg"
-                alt="About Pulse Laser Clinic"
-                fill
-                className="object-cover rounded-lg"
-              />
+            <div className="grid grid-cols-2 gap-2 rounded-xl overflow-hidden shadow-2xl border-8 border-white bg-white">
+              <div className="relative aspect-[3/4]">
+                <Image
+                  src="https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/before1-1.jpg"
+                  alt="Tattoo Removal Before"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute bottom-4 left-0 right-0 text-center">
+                  <span className="bg-black/60 text-white text-[10px] uppercase px-3 py-1 tracking-widest backdrop-blur-sm rounded-full">Before</span>
+                </div>
+              </div>
+              <div className="relative aspect-[3/4]">
+                <Image
+                  src="https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/after2.jpg"
+                  alt="Tattoo Removal After"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute bottom-4 left-0 right-0 text-center">
+                  <span className="bg-black/60 text-white text-[10px] uppercase px-3 py-1 tracking-widest backdrop-blur-sm rounded-full">After</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Decoration */}
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 md:w-60 md:h-60 opacity-5 pointer-events-none z-0">
+              <img src="/images/round-shape-img.svg" alt="" className="w-full h-full" />
             </div>
           </div>
         </div>
@@ -74,3 +92,4 @@ export default function Procedure() {
     </section>
   );
 }
+

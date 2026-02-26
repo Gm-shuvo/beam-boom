@@ -1,10 +1,7 @@
 "use client";
 
-import { Href, ViewTransitionLink } from "@/components/view-transition-link";
-import { ExternalLink } from "lucide-react";
-import Image from "next/image";
-
 export default function About() {
+
   return (
     <section id="about" className="py-16 md:py-24 bg-white relative">
       {/* Left leaf decoration (behind everything) */}
@@ -15,71 +12,92 @@ export default function About() {
       {/* Right gray vertical panel */}
       <div className="absolute top-0 right-0 bottom-0 w-[22%] bg-gray-50 z-0 pointer-events-none" />
 
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-start mb-12">
           {/* Left Content */}
           <div className="space-y-6">
-            <span className="pulse-subtitle text-sm font-medium text-gray-600 tracking-wide uppercase">
-              Pulse Laser
-            </span>
-            <h2 className="pulse-title text-2xl md:text-4xl font-bold text-nowrap text-gray-900">
+            <h2 className="pulse-title !text-3xl md:!text-5xl font-bold text-gray-900 uppercase">
               Laser Tattoo Removal
             </h2>
-            <div className="pulse-light-description text-base md:text-lg  max-w-2xl mb-10 space-y-4">
+            <p className="italic text-lg text-gray-600 font-light italic">
+              ND:YAG Laser Technology
+            </p>
+            <div className="pulse-light-description text-base md:text-lg max-w-2xl space-y-6">
               <p>
-                Do you have a tattoo that you regret and want it removed for
-                good? Pulse Laser Aesthetic Clinic specialises in removing
-                tattoos of all sizes and colours. We have both a PicoWay
-                picosecond laser from Candela as well as Q-switched ND:YAG laser
-                from Alma Lasers which allows us to treat tattoos of all colours
-                very safely and effectively on all skin types. These lasers are
-                non-invasive and can safely remove your tattoo, whilst
-                minimizing the risks of scarring or loss of skin colour
-                (hypopigmentation). For any questions and to speak to a member
-                of our team contact team on 020 3405 8483 or via
-                info@pulse-clinic.co.uk.
+                We use advanced Q-Switched ND:YAG laser technology to safely
+                break down unwanted tattoo ink and semi-permanent makeup.
               </p>
               <p>
-                We apply powerful picosecond laser energy, with very short
-                pulses, to the unwanted tattoo. These pulses penetrate through
-                the top layer of skin and shatter the tattoo ink into tiny
-                fragments, without causing damage to the skin. Over time, your
-                body’s natural healing processes (the lymphatic system) remove
-                the ink fragments from your body. This allows your tattoo to
-                fade with only minimal risks of scarring or skin discoloration.
+                The 1064nm wavelength effectively targets darker inks such as
+                black and blue, while the 532nm wavelength treats red and warmer
+                tones. The laser energy shatters ink particles beneath the skin,
+                allowing the body to naturally eliminate them over time.
               </p>
-              <p>
-                Every colour of ink requires a different wavelength of light and
-                amount of energy to be efficiently removed. At Pulse Laser
-                Aesthetic Clinic, our lasers can operate at two different
-                wavelengths to be effective with darker colours (blacks and
-                blues, 1064nm), as well brighter colours, like red and orange
-                (532nm).
-              </p>
+              <p>Safe, precise and suitable for most skin types.</p>
             </div>
-            <ViewTransitionLink
-              href={"/about-us" as Href}
-              target="_blank"
-              className="inline-flex items-center gap-2 bg-black text-white px-8 py-3 font-medium hover:bg-gray-800 transition-colors"
-            >
-              Read more
-              <ExternalLink size={16} />
-            </ViewTransitionLink>
           </div>
 
-          {/* Right Image */}
-          <div className="relative">
-            <div className="relative h-100 md:h-125 w-75 md:w-150 overflow-hidden z-10">
-              <Image
-                src="https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/0O9A2759-edit-Edit-copy-scaled.jpg"
-                alt="About Pulse Laser Clinic"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
+          {/* Right Pricing Table */}
+          <div className="overflow-hidden shadow-sm border border-gray-100">
+            <table className="w-full text-left border-collapse text-sm md:text-base">
+              <thead>
+                <tr className="bg-[#B59A5B] text-white uppercase tracking-wider">
+                  <th className="p-4 font-semibold">Area</th>
+                  <th className="p-4 font-semibold text-center">Single</th>
+                  <th className="p-4 font-semibold text-center">Three</th>
+                  <th className="p-4 font-semibold text-center">Six</th>
+                  <th className="p-4 font-semibold text-center">Nine</th>
+                </tr>
+              </thead>
+              <tbody className="bg-[#FAF9F6] text-gray-800">
+                <tr className="border-b border-white">
+                  <td className="p-4">Eyebrows</td>
+                  <td className="p-4 text-center">£80</td>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                  <td className="p-4"></td>
+                </tr>
+                <tr className="border-b border-white bg-white/50">
+                  <td className="p-4">Extra small (up to 3cm)</td>
+                  <td className="p-4 text-center font-medium">£30</td>
+                  <td className="p-4 text-center">£81</td>
+                  <td className="p-4 text-center">£153</td>
+                  <td className="p-4 text-center">£216</td>
+                </tr>
+                <tr className="border-b border-white">
+                  <td className="p-4">Small (4-6cm)</td>
+                  <td className="p-4 text-center font-medium">£50</td>
+                  <td className="p-4 text-center">£135</td>
+                  <td className="p-4 text-center">£255</td>
+                  <td className="p-4 text-center">£360</td>
+                </tr>
+                <tr className="border-b border-white bg-white/50">
+                  <td className="p-4">Medium (7-9cm)</td>
+                  <td className="p-4 text-center font-medium">£100</td>
+                  <td className="p-4 text-center">£270</td>
+                  <td className="p-4 text-center">£510</td>
+                  <td className="p-4 text-center">£720</td>
+                </tr>
+                <tr className="border-b border-white">
+                  <td className="p-4">Large (10-12cm)</td>
+                  <td className="p-4 text-center font-medium">£150</td>
+                  <td className="p-4 text-center">£405</td>
+                  <td className="p-4 text-center">£765</td>
+                  <td className="p-4 text-center">£1080</td>
+                </tr>
+                <tr className="italic bg-white/50">
+                  <td className="p-4">{"<13cm price upon consultation"}</td>
+                  <td className="p-4 text-center">POA</td>
+                  <td className="p-4 text-center">POA</td>
+                  <td className="p-4 text-center">POA</td>
+                  <td className="p-4 text-center">POA</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </section>
   );
 }
+

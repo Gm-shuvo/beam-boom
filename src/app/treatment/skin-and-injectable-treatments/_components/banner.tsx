@@ -19,14 +19,14 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    subtitle: "PLUSE LASER",
-    title: "Laser Tattoo Removal",
-    description: "",
+    subtitle: "BEAM AND BLOOM",
+    title: "Skin and Injectable Treatments",
+    description: "Experience premium injectable treatments carried out with the highest standards of care and attention to detail.",
 
     backgroundImage:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/R6II4136-scaled.jpg",
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/10/istockphoto-1779848264-612x612-1.jpg",
     foregroundImage:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/R6II4136-scaled.jpg",
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/10/istockphoto-1311483932-612x612-1.jpg",
     buttonText: "Contact Us",
   },
 ];

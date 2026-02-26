@@ -15,152 +15,48 @@ interface Treatment {
 const treatments: Treatment[] = [
   {
     id: "1",
-    name: "Soprano Titanium Laser Hair Removal",
+    name: "Diode Laser Hair Removal for Women",
     image:
       "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/R6II4178-scaled.jpg",
-    slug: "soprano-titanium-laser-hair-removal",
+    slug: "diode-laser-hair-removal-for-women",
   },
   {
     id: "2",
+    name: "3D VJUVE™ Fractional Co2 Laser",
+    image:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/06/DSC9156MAX-scaled.jpg",
+    slug: "3d-vjuve-fractional-co2-laser",
+  },
+  {
+    id: "3",
+    name: "Permanent Make Up",
+    image:
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2025/11/Meline®_02_DarkCircles_DSC01212-scaled-1.jpg",
+    slug: "permanent-make-up",
+  },
+  {
+    id: "4",
     name: "Laser Tattoo Removal",
     image:
       "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/R6II4136-scaled.jpg",
     slug: "laser-tattoo-removal",
   },
   {
-    id: "3",
-    name: "Laser for Red Facial Veins and Rosacea",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/1A610C79-3EA3-4C72-B496-F2A10626F82C.webp",
-    slug: "laser-for-red-facial-veins",
-  },
-  {
-    id: "4",
-    name: "Alma Hybrid CO2 Laser",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/06/DSC9156MAX-scaled.jpg",
-    slug: "alma-hybrid-fractional-co2-laser",
-  },
-  {
     id: "5",
-    name: "PhotoFacial Laser for Pigmentation",
+    name: "Advanced Carbon Laser Facial",
     image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/AdobeStock_216793051-e1556147202225-1024x751-1-1.jpeg",
-    slug: "laser-for-pigmentation-ipl-aft",
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/clearskin-laser-podmladjivanje.jpg",
+    slug: "advanced-carbon-laser-facial",
   },
   {
     id: "6",
-    name: "SkinPen Microneedling",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/N8A1104.jpg",
-    slug: "skinpen-microneedling",
-  },
-  {
-    id: "7",
-    name: "ClearLift Laser Facelift",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/Sheffield_Skincare_Clinic_-_Non_Surgical_Facelift_-_ClearLift_4D.webp",
-    slug: "clearlift-laser-facelift",
-  },
-  {
-    id: "8",
-    name: "Alma TED Advanced Hair Restoration",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2025/04/R6II4105-scaled.jpg",
-    slug: "hair-loss-and-thinning-calecim-treatment",
-  },
-  {
-    id: "9",
-    name: "MeLine® Dark Circle Treatment",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2025/11/Meline®_02_DarkCircles_DSC01212-scaled-1.jpg",
-    slug: "meline-dark-circle-treatment",
-  },
-  {
-    id: "10",
-    name: "Lesion Removal – Skin Tag, Milia and Wart Removal",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/IMG_6837.jpg",
-    slug: "skin-tag-milia-and-wart-removal",
-  },
-  {
-    id: "11",
-    name: "Morpheus8 – Face & Neck lift",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/aestheticallyyou-treatment-skin-morpheus8-prime-pfuv02c02yrvn7fnt5tiup29r67ewda1vxkwnfx5v8.jpg",
-    slug: "morpheus8-face-neck-lift",
-  },
-  {
-    id: "12",
-    name: "Medical Facials",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/Rectangle-18-1-1-2.png",
-    slug: "skin-resurfacing-facial",
-  },
-  {
-    id: "13",
-    name: "ClearSkin Pro Acne Treatment",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/clearskin-laser-podmladjivanje.jpg",
-    slug: "clearskin-acne-treatment",
-  },
-  {
-    id: "14",
-    name: "Near Infra-Red (NIR) Skin Tightening",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/632A9001-scaled-1.jpg",
-    slug: "near-infra-red-nir-skin-tightening",
-  },
-  {
-    id: "15",
-    name: "Laser for Leg Veins (LP Nd:YAG)",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/02_Clearvein-Vein-Removal.jpg",
-    slug: "laser-for-leg-veins-lp-ndyag",
-  },
-  {
-    id: "16",
-    name: "iPixel Laser Skin Resurfacing",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/ipixel_1-1024x1024-1.jpg",
-    slug: "ipixel-laser-skin-resurfacing",
-  },
-  {
-    id: "17",
-    name: "Anti-Wrinkle Injections",
+    name: "Skin and Injectable Treatments",
     image:
       "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/10/istockphoto-1311483932-612x612-1.jpg",
-    slug: "anti-wrinkle-injections",
-  },
-  {
-    id: "18",
-    name: "Dermal Fillers",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/10/lips-8704166_1280.webp",
-    slug: "injectable-treatments-2",
-  },
-  {
-    id: "19",
-    name: "Skin Boosters / Biostimulators",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/10/cosmetic-aesthetic-treatment-face-caucasian-260sw-2419112687-e1727863055754.webp",
-    slug: "skin-boosters-biostimulators",
-  },
-  {
-    id: "20",
-    name: "Cosmelan Depigmentation peel",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/06/cosmelan-1-y-2-e1680507552266.jpg",
-    slug: "cosmelan-depigmentation-peel",
-  },
-  {
-    id: "21",
-    name: "Exosome Treatment",
-    image:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2025/04/R6II4105-scaled.jpg",
-    slug: "exosome-treatment",
+    slug: "skin-and-injectable-treatments",
   },
 ];
+
 
 export default function Treatments() {
   const [currentIndex, setCurrentIndex] = useState(0);

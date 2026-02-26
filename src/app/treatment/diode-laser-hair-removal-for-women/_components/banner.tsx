@@ -20,13 +20,13 @@ const slides: Slide[] = [
   {
     id: 1,
     subtitle: "PLUSE LASER",
-    title: "Laser Tattoo Removal",
+    title: "Diode Laser Hair Removal for Women",
     description: "",
 
     backgroundImage:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/R6II4136-scaled.jpg",
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/AdobeStock_394725758-scaled.jpeg",
     foregroundImage:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/R6II4136-scaled.jpg",
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/R6II4178-scaled.jpg",
     buttonText: "Contact Us",
   },
 ];

@@ -21,24 +21,28 @@ export const navigationData = [
     name: "TREATMENTS",
     children: [
       {
+        name: "Diode Laser Hair Removal for Women",
+        href: "/treatment/diode-laser-hair-removal-for-women" as Href,
+      },
+      {
+        name: "3D VJUVE™ Fractional Co2 Laser",
+        href: "/treatment/3d-vjuve-fractional-co2-laser" as Href,
+      },
+      {
+        name: "Permanent Make Up",
+        href: "/treatment/permanent-make-up" as Href,
+      },
+      {
         name: "Laser Tattoo Removal",
         href: "/treatment/laser-tattoo-removal" as Href,
       },
       {
-        name: "Soprano Titanium Laser Hair Removal",
-        href: "/treatment/soprano-titanium-laser-hair-removal" as Href,
+        name: "Advanced Carbon Laser Facial",
+        href: "/treatment/advanced-carbon-laser-facial" as Href,
       },
       {
-        name: "Skin Boosters / Biostimulators",
-        href: "/treatment/skin-boosters-biostimulators" as Href,
-      },
-      {
-        name: "Anti-Wrinkle Injections",
-        href: "/treatment/anti-wrinkle-injections" as Href,
-      },
-      {
-        name: "ClearSkin Pro Acne Treatment",
-        href: "/treatment/clear-skin-pro-acne-treatment" as Href,
+        name: "Skin and Injectable Treatments",
+        href: "/treatment/skin-and-injectable-treatments" as Href,
       },
     ],
   },

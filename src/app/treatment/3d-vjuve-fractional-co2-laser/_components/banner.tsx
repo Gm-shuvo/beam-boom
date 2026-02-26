@@ -19,14 +19,14 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    subtitle: "PLUSE LASER",
-    title: "Laser Tattoo Removal",
-    description: "",
+    subtitle: "BEAM AND BLOOM",
+    title: "3D VJUVE™ Fractional Co2 Laser",
+    description: "The ultimate skin resurfacing treatment for scars, fine lines, and texture improvement.",
 
     backgroundImage:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/R6II4136-scaled.jpg",
+      "https://www.pulse-clinic.co.uk/wp-content/themes/pulselaser/assets/images/banner-bg-img.jpg",
     foregroundImage:
-      "https://www.pulse-clinic.co.uk/wp-content/uploads/2024/09/R6II4136-scaled.jpg",
+      "https://www.pulse-clinic.co.uk/wp-content/uploads/2023/05/clearskin-laser-podmladjivanje.jpg",
     buttonText: "Contact Us",
   },
 ];
